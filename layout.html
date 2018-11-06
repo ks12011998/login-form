@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	{% if title %}
+		<title>{{ title }}</title>
+	{% else %}
+		<title> College </title>
+	{% endif %}
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/custom.css') }}">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/scrollbar/jquery.mCustomScrollbar.css') }}">
+	<script src="{{ url_for('static',filename='bootstrap/jquery/jquery.js') }}"></script>
+	<script src="{{ url_for('static',filename='bootstrap/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='bootstrap/js/bootstrap.js') }}"></script>
+</head>
+
+<body>
+
+<div classs = 'row'>
+	<!-- Main sidebar starts here -->
+	<div class = 'col-xs-3 sidebar-container'>
+
+<!-- Brand heading starts here -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">JEE MAINS</a>
+				</div>
+			</div>
+		</nav>
+<!-- Brand heading ends here -->
+
+<!-- Sidebar contents starts here -->
+		<ul class="nav nav-pills nav-stacked sidebar-content">
+			<li><a href = '' class = 'collapse text-muted'>Dashboard</a></li>
+			<li><a href = ''>My Ranking</a>
+	  		<li><a href = ''>Settings</a></li>
+	  	<ul>
+	  <!-- Main Sidebar contents ends here -->
+	</div>
+	<!-- Main Sidebar ends here -->
+
+
+	<div class = 'col-xs-9 main-content'>
+<!-- Top navigation menu starts here  -->
+		<nav class="navbar navbar-default">
+
+			<div class="container-fluid">
+				<!-- Search bar starts here -->
+				<form class="navbar-form navbar-left" action="/action_page.php">
+					<div class="form-group">
+						<li class="dropdown search-bar">
+				        	<input type = 'text' class=" form-control dropdown-toggle " placeholder = 'Search...' data-toggle="dropdown">
+				        	<ul class="dropdown-menu">
+					          		<!--Search dropdown header-->
+								<div class = 'container-fluid' style = 'padding: 5px 10px;'>
+									<small><b class = 'text-muted'>Recent Searches</b></small>
+								</div>
+							<!--Search dropdown header ends-->
+							<!--Search dropdown body-->
+								<div class = 'list-group list-group-flush search-results'>
+									<a href = '#' class = 'list-group-item'>
+										<div class = 'media'>
+											<div class = 'media-left media-middle'>
+												<img src = 'static/photos/student.png' class = 'media-object img-circle' style = 'width: 30px;'>
+											</div>
+											<div class = 'media-body'>
+												<b class = 'search-header'>Bittu Kumar</b>
+											</div>
+										</div>
+									</a>
+								</div>
+							<!--Search dropdown body ends-->
+							<!--Search dropdown footer-->
+								<div class = 'container-fluid text-center' style = 'padding: 5px 10px;'><a href = ''><small>View all results</small></a></div>
+							<!--Search dropdown footer ends-->
+				        	</ul>
+				      	</li>
+					</div>
+				</form>
+				<!-- Search bar ends here -->
+
+				<ul class="nav navbar-nav navbar-right navigation-options">
+					<!-- Sidebar hider starts here -->
+					<li class = 'dropdown nav-collapse'>
+						<a class = 'navigation-icon' href = '#'>
+							<i class = 'glyphicon glyphicon-th'></i>
+						</a>
+			  		</li>
+			  		<!-- Sidebar hider ends here -->
+					<!-- Notification bar starts -->
+					<li class="dropdown">
+				    	<a class="dropdown-toggle navigation-icon" data-toggle="dropdown" href="#"><i class = 'glyphicon glyphicon-bell'></i></a>
+					    <ul class="dropdown-menu navbar-notification-container">
+						      <!--Notification header starts here-->
+							<li class = 'dropdown-header'><b>Notifications</b></li>
+							<!--Notification header ends-->
+
+							<!--Notification body starts here -->
+							<div class = 'list-group list-group-flush'>
+								<a href = '' class = 'list-group-item'>
+									<div class = 'media'>
+										<div class = 'media-left'>
+											<img src = 'static/photos/student.png' class = 'media-object img-circle' style = 'width: 40px'>
+										</div>
+										<div class = 'media-body'>
+											<p class = 'navbar-notification-header'>There is an <b>event</b> at downs</p>
+											<p class = 'navbar-notification-text'>21 April</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- <div class = 'media panel panel-default' style = 'border-left: none; border-right: none;'>
+									<div class = 'media-body text-center'>
+										<h4>You have no notifications</h4>
+									</div>
+								</div> -->
+						<!--Notification body ends -->
+					    </ul>
+				  	</li>
+				  <!---Notification bar ends-->
+
+				  <!-- Message bar starts here -->
+				  	<li class="dropdown">
+				    	<a class="dropdown-toggle navigation-icon" data-toggle="dropdown" href="#"><i class = 'glyphicon glyphicon-comment'></i></a>
+				    	<ul class="dropdown-menu navbar-message-container">
+						<!--Message header-->
+							<div class = 'container-fluid' style = 'padding: 5px 10px'>
+								<small><b class = 'text-muted'>Messages</b></small>
+								<a class = 'pull-right' href = '#'><small>Mark all as read</small></a>
+							</div>
+						<!--Message header ends-->
+						<!--Message body-->
+							<div class = 'list-group list-group-flush' >
+								<a href = '#' class = 'list-group-item'>
+									<div class = 'media'>
+										<div class = 'media-left'>
+											<img src = 'static/photos/student.png' class = 'media-object img-circle' style = 'width: 40px;'>
+										</div>
+										<div class = 'media-body'>
+											<p class = 'navbar-message-sender'>Bittu Kumar</p>
+											<p class = 'navbar-message'>Hello  How are you now...Hope good?</p>
+											<p class =  'navbar-message-time'>Yesterday</p>
+										</div>
+									</div>
+								</a>
+							<!-- <div class = 'media' style = 'border-left: none; border-right: none;'>
+								<div class = 'media-body text-center'>
+									<h4>You have no messages</h4>
+								</div>
+							</div> -->
+							</div>
+						<!--Message body ends-->
+						<!--Message footer-->
+							<div class = 'container-fluid text-center' style = 'padding: 5px 10px;'><a href = '{{ url_for("message_page") }}'><small>View all messages</small></a></div>
+						<!--Message footer ends-->
+				    	</ul>
+				  	</li>
+				  <!-- Message bar ends here -->
+
+				  <!-- Setting bar starts here -->
+				  	<li class="dropdown">
+				    	<a class="dropdown-toggle navigation-icon" data-toggle="dropdown" href="#"><i class = 'glyphicon glyphicon-cog'></i></a>
+				    	<ul class="dropdown-menu pull-right">
+							<li><a href="#">Page 1-1</a></li>
+							<li><a href="#">Page 1-2</a></li>
+							<li><a href="#">Page 1-3</a></li>
+				    	</ul>
+				 	</li>
+				<!-- Setting bar ends here -->
+				<!-- Profile bar starts here -->
+				   	<li class="dropdown navbar-profile">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<img class = 'img-circle' style = 'position: relative; width: 30px' src = 'static/photos/student.png'></a>
+
+						<ul class="dropdown-menu pull-right">
+							<li><a href="#"><i class = 'glyphicon glyphicon-user'></i> Profile</a></li>
+							<li><a href="#">Academics</a></li>
+							<li><a href="#">Attendence</a></li>
+							<li><a href = "#"><i class = 'glyphicon glyphicon-log-out'></i> Logout</a></li>
+						</ul>
+					</li>
+				<!-- Profile bar ends here -->
+				</ul>
+			</div>
+		</nav> 
+	<!-- Top navigation menu ends here -->
+
+	<!-- Left panel where contents are shown (all the main stuffs) start here -->
+
+		{% block content %} {% endblock %}
+	<!-- Left panel where contents are shown ends here -->
+	</div>
+</div>
+
+</body>
+
+<script>
+$(document).ready(function() {
+	$(".nav-collapse").click(function() {
+		$(".sidebar-container").show();
+	});
+});
+</script>
+</html>

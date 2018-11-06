@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	{% if title %}
+		<title>{{ title }}</title>
+	{% else %}
+		<title>Test Page</title>
+	{% endif %}
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/custom.css') }}">
+	<script src="{{ url_for('static',filename='bootstrap/jquery/jquery.js') }}"></script>
+	<script src="{{ url_for('static',filename='bootstrap/js/bootstrap.js') }}"></script>
+</head>
+
+<style>
+
+.circle {
+	position: absolute;
+	stroke : white;
+}
+.glow-1 {
+	animation : glow 2.3s ease-in 0s infinite;
+}
+
+.glow-2 {
+	animation: glow 2.3s ease-in 0.6s infinite;
+}
+
+.glow-3 {
+	animation: glow 2.3s ease-in 1.2s infinite;
+}
+
+@keyframes glow {
+	0% { transform: scale(0.5); stroke : #2a96ed; stroke-width: 0px; opacity: 1;}
+	50% { stroke-width: 6px; }
+	100% { transform : scale(2.5); stroke: #2a96ed; stroke-width: 2px; opacity: 0;}
+}
+
+svg {
+	border: 1px solid black;
+}
+
+.panel {
+/*	border-left: 1px solid #007bff;
+	border-right: 1px solid #007bff;*/
+	border-radius: 0;
+	box-shadow: 2px -1px 4px rgba(0,0,0,0.4), -2px 4px 4px rgba(0,0,0,0.4);
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+</style>
+
+<body>
+
+<form class="form-horizontal" name = "applicationForm" action="" method = "POST">
+	<div class = "container" id = "applicationFormDiv">
+		<div class = "panel panel-primary">
+			<!-- Personal Details -->
+			<div class = "panel-heading">
+				<h4>Personal Details</h4>
+			</div>
+
+			<div class = "panel-body" style = "padding: 15px 25px;">
+  				<div class="form-group">
+    				<label class="control-label col-sm-3">Candidate's Name :&nbsp;</label>
+    				<div class="col-sm-7">
+      					<input type="text" class="form-control" name="candidateName">
+    				</div>
+  				</div>
+
+  				<div class="form-group">
+    				<label class="control-label col-sm-3">Father's Name :&nbsp;</label>
+    				<div class="col-sm-7">
+     					<input type="text" class="form-control" name="fatherName">
+    				</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Mother's Name :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "text" class = "form-control" name = "motherName">
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Gender :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>Male</option>
+  							<option>Female</option>
+  						</select>
+  					</div>
+  				</div>
+ 				
+ 				<div class = "form-group">
+  					<label class = "control-label col-sm-3">State Of Eligibility :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>Jharkhand</option>
+  							<option>Punjab</option>
+  						</select>
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Date Of Birth :&nbsp;</label>
+  					<div class = "col-sm-2">
+  						<select class = "form-control">
+  							<option>1</option>
+  							<option>2</option>
+  						</select>
+  					</div>
+  					<div class = "col-sm-3">
+  						<select class = "form-control">
+  							<option>January</option>
+  							<option>February</option>
+  						</select>
+  					</div>
+  					<div class = "col-sm-2">
+  						<select class = "form-control">
+  							<option>2017</option>
+  							<option>2018</option>
+  						</select>
+  					</div>
+	  			</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Category :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>General</option>
+  							<option>OBC</option>
+  							<option>SC/ST</option>
+  						</select>
+  					</div>
+  				</div>
+  				
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Person with Diability(PwD) :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>No</option>
+  							<option>Yes</option>
+  						</select>
+  					</div>
+  				</div>
+	
+			</div>
+			<!-- Exam Related Details -->
+			<div class = "panel-heading">
+				<h4>Exam Related Details</h4>
+			</div>
+
+			<div class = "panel-body">
+				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Applying For :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>JEE(Main) Paper-1 (B.E/B.Tech) Only</option>
+  							<option>JEE Advanced</option>
+  						</select>
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Mode of Examination :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>PEN AND PAPER TEST</option>
+  							<option>COMPUTER BASED EXAMINATION</option>
+  						</select>
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Question Paper Medium :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<select class = "form-control">
+  							<option>ENGLISH</option>
+  							<option>HINDI</option>
+  						</select>
+  					</div>
+  				</div>
+
+			</div>
+
+			<div class = "panel-heading">
+				<h4>Address Details</h4>
+			</div>
+
+			<div class = "panel-body">
+				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Address :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "text" class = "form-control" name = "address">
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Email Address :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "email" class = "form-control" name = "email">
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Phone Number :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "number" class = "form-control" name = "phone">
+  					</div>
+  				</div>
+
+			</div>
+
+			<!-- Passsword -->
+			<div class = "panel-heading">
+				<h4>Choose Password</h4>
+			</div>
+
+			<div class = "panel-body">
+				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Password :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "password" class = "form-control" name = "passwd">
+  					</div>
+  				</div>
+
+  				<div class = "form-group">
+  					<label class = "control-label col-sm-3">Confirm Password :&nbsp;</label>
+  					<div class = "col-sm-7">
+  						<input type = "password" class = "form-control" name = "confirmPasswd">
+  					</div>
+  				</div>
+
+  				<div class="form-group">
+    				<div class="col-sm-offset-2 col-sm-8">
+      					<button class="btn btn-primary pull-right" style = "width: 200px" id = "1_next">Next</button>
+    				</div>
+  				</div>
+
+			</div>
+		</div>		
+	</div>
+</form>
+<!-- <div class = "container" style = "position: relative; top: -70px">
+	<div class = "row">
+	<div class = "col-sm-4">
+		<svg width = "250" height = "250" class = "circle glow-1">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle glow-2">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle glow-3">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill = "white" stroke-width = "2" stroke = "#2a96ed"/>
+		</svg>
+
+		 <svg height="250" width="750">
+  			<line x1="125" y1="125" x2="750" y2="125" style="stroke:rgb(255,0,0);stroke-width:4" />
+		</svg> 
+	</div>
+
+	<div class = "col-sm-4">
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill = "white" stroke-width = "2" stroke = "#2a96ed"/>
+		</svg>
+	</div>
+
+	<div class = "col-sm-4">
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill="white"/>
+		</svg>
+		<svg width = "250" height = "250" class = "circle">
+			<circle cx = "50%" cy = "50%" r= "20" fill = "white" stroke-width = "2" stroke = "#2a96ed"/>
+		</svg>
+	</div>
+</div> -->
+
+</body>
+
+<script>
+$(document).ready(function() {
+	$("#1_next").click(function(e) {
+		e.preventDefault();
+		$("#applicationFormDiv").animate({left: "-945px"});
+		console.log("Function working");
+	});
+
+});
+</script>
+
+</html>

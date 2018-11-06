@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	{% if title %}
+		<title>{{ title }}</title>
+	{% endif %}
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href=" {{ url_for('static',filename='bootstrap/css/custom.css') }}">
+	<script src="{{ url_for('static',filename='bootstrap/jquery/jquery.js') }}"></script>
+	<script src="{{ url_for('static',filename='bootstrap/js/bootstrap.js') }}"></script>
+</head>
+
+<style>
+
+.panel {
+/*	border-left: 1px solid #007bff;
+	border-right: 1px solid #007bff;*/
+	border-radius: 0;
+	box-shadow: 2px -1px 4px rgba(0,0,0,0.4), -2px 4px 4px rgba(0,0,0,0.4);
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+</style>
+
+<body>
+
+<div class = "container">
+	<div class = "container-fluid">
+		<form name = "uploadImages" action = "" method = "POST" enctype = "multipart/form-data">
+			<div class = "panel panel-primary">
+
+				<div class = "panel-heading">
+					<h4>Upload Image</h4>
+				</div>
+
+				<div class = "panel-body">
+					<div class = "container-fluid">
+						<b>Click on the button to upload scanned image of your Photograph</b>
+						<ol type="number"><br>
+							<li>Scanned photograph should be <b>.jpg/.jpeg</b> format</li>
+							<li>Size of the photograph should be between <b>10kb</b> to <b>100kb</b></li>
+						</ol><br>
+						
+						<div class = "container-fluid text-center">
+							<div class = "container-fluid text-center">
+								<img class = "img-thumbnail" src = "/static/photos/admin.png" width = "100" height = "100">
+							</div><br>
+							<button type = "button" class = "btn btn-info">Upload Image</button>
+						</div>
+					</div>
+				</div>
+
+				<div class = "panel-heading">
+					<h4>Upload Signature</h4>
+				</div>
+
+				<div class = "panel-body">
+					<div class = "container-fluid">
+						<b>Click on the button to upload scanned image of your signature</b>
+						<ol type="number"><br>
+							<li>Scanned photograph should be <b>.jpg/.jpeg</b> format</li>
+							<li>Size of the photograph should be between <b>5kb</b> to <b>50kb</b></li>
+						</ol><br>
+						
+						<div class = "container-fluid text-center">
+							<div class = "container-fluid text-center">
+								<img class = "img-thumbnail" src = "/static/photos/admin.png" width = "100" height = "100">
+							</div><br>
+							<button type = "button" class = "btn btn-info">Upload signature</button>
+						</div>
+					</div>
+				</div>
+
+				<div class = "panel-heading">
+					<h4>Upload Marksheet</h4>
+				</div>
+
+				<div class = "panel-body">
+					<div class = "container-fluid">
+						<b>Click on the button to upload scanned image of your marksheet</b>
+						<ol type="number"><br>
+							<li>Scanned photograph should be <b>.jpg/.jpeg</b> format</li>
+							<li>Size of the photograph should be between <b>10kb</b> to <b>100kb</b></li>
+						</ol>
+						<br>
+						<div class = "container-fluid text-center">
+							<div class = "container-fluid text-center">
+								<img class = "img-thumbnail" src = "/static/photos/admin.png" width = "100" height = "100">
+							</div><br>
+							<button type = "button" class = "btn btn-info">Upload Marksheet</button>
+						</div>
+					</div><br><br><hr>
+
+					<div class="form-group">
+	    				<div class="col-sm-offset-2 col-sm-8">
+	      					<button class="btn btn-info pull-left" style = "width: 200px">Previous</button>
+	      					<button class="btn btn-info pull-right" style = "width: 200px">Next</button>
+	    				</div>
+	  				</div>
+	  				
+				</div>
+
+			</div>
+		</form>
+</body>
+
+</html>
